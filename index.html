@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
+    <title>Welcome</title>
     <style>
         body {
             display: flex;
@@ -13,29 +13,13 @@
             font-family: Arial, sans-serif;
             text-align: center;
             color: white;
-            overflow: hidden;
-            position: relative;
-        }
-        video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
+            background: url('pokemon-background.jpg') no-repeat center center/cover;
         }
         .container {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        h1 {
-            font-size: 2.5em;
-        }
-        .buttons {
-            margin-top: 20px;
         }
         button {
             padding: 10px 20px;
@@ -43,49 +27,20 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            background: #ffd700;
+            color: black;
+            font-weight: bold;
             transition: 0.3s;
         }
-        .yes {
-            background: #28a745;
-            color: white;
-        }
-        .no {
-            background: #dc3545;
-            color: white;
-            position: relative;
+        button:hover {
+            background: #ffcc00;
         }
     </style>
 </head>
 <body>
-    <video autoplay loop muted>
-        <source src="your-video.mp4" type="video/mp4">
-        <source src="472E7B1A-4F3F-42FC-99B5-D5E0128A0179.MOV" type="video/quicktime">
-        Your browser does not support the video tag.
-    </video>
     <div class="container">
-        <h1>Will You Be My Valentine, bb? 💖</h1>
-        <div class="buttons">
-            <button class="yes" onclick="confirmYes()">Yes</button>
-            <button class="no" onmouseover="moveButton()">No</button>
-        </div>
-        <p id="message" style="display: none; font-size: 2.5em; margin-top: 20px;">Yehey!! I love you sooo much bb ko! 💕</p>
+        <h1>Welcome, Trainer! Ready to Play?</h1>
+        <button onclick="location.href='val.html'">PLAY</button>
     </div>
-
-    <script>
-        function confirmYes() {
-            let confirmation = confirm("sigurado ka bb? pwede mo try mag no");
-            if (confirmation) {
-                document.getElementById('message').style.display = 'block';
-            }
-        }
-        function moveButton() {
-            let button = document.querySelector('.no');
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 100);
-            button.style.position = 'absolute';
-            button.style.left = `${x}px`;
-            button.style.top = `${y}px`;
-        }
-    </script>
 </body>
 </html>
