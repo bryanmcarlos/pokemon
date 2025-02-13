@@ -10,19 +10,20 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('IMG_4167.jpg'), url('IMG_7579.jpg'), url('IMG_8025.jpg');
-            background-size: cover;
-            background-position: center;
-            animation: backgroundChange 15s infinite;
             font-family: Arial, sans-serif;
             text-align: center;
             color: white;
+            overflow: hidden;
+            position: relative;
         }
-        @keyframes backgroundChange {
-            0% { background-image: url('IMG_4167.jpg'); }
-            33% { background-image: url('IMG_7579.jpg'); }
-            66% { background-image: url('IMG_8025.jpg'); }
-            100% { background-image: url('IMG_4167.jpg'); }
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
         .container {
             background: rgba(255, 255, 255, 0.2);
@@ -56,18 +57,23 @@
     </style>
 </head>
 <body>
+    <video autoplay loop muted>
+        <source src="your-video.mp4" type="video/mp4">
+        <source src="472E7B1A-4F3F-42FC-99B5-D5E0128A0179.MOV" type="video/quicktime">
+        Your browser does not support the video tag.
+    </video>
     <div class="container">
         <h1>Will You Be My Valentine, bb? 💖</h1>
         <div class="buttons">
             <button class="yes" onclick="confirmYes()">Yes</button>
             <button class="no" onmouseover="moveButton()">No</button>
         </div>
-        <p id="message" style="display: none; font-size: 3.5em; margin-top: 20px;">Yehey!! I love you sooo much bb! 💕</p>
+        <p id="message" style="display: none; font-size: 2.5em; margin-top: 20px;">Yehey! I love you sooo much bb ko! 💕</p>
     </div>
 
     <script>
         function confirmYes() {
-            let confirmation = confirm("Are you sure, bb?");
+            let confirmation = confirm("Sigurado ka bb? baka gusto mo try yung NO?");
             if (confirmation) {
                 document.getElementById('message').style.display = 'block';
             }
